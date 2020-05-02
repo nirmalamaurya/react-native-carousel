@@ -6,17 +6,25 @@ const Dashobard = () => {
   const bannerWidth = Dimensions.get("window").width;
   const bannerHeight = 260;
 
-  const images = ["1", "2", "3", "4"];
+  const images = [
+      require("../../assets/1.jpeg"),
+      require("../../assets/2.jpeg"),
+      require("../../assets/3.jpeg"),
+      require("../../assets/4.jpeg"),
+      require("../../assets/5.jpeg"),
+      require("../../assets/6.jpeg"),
+      require("../../assets/7.jpeg")
+
+
+    ];                 
 
   
-
-  const displayImage = images.map((item, key) => (
-    <Image source={require(`../../assets/2.jpg`)} style={styles.image} />
-  ));
+const displayImage = images.map((item)=>
+        <Image source={item} style = {styles.image}/>  
+    );
 
   return (
     <View style={styles.container}>
-      <Text>This is Dashboard</Text>
       <Carousel
         autoplay
         autoplayTimeout={5000}
@@ -36,7 +44,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: 500,
-    height: 500,
+    height: 700
   },
 });
 export default Dashobard;
